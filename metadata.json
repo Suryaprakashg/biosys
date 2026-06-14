@@ -1,0 +1,8 @@
+{
+  "name": "BIOSYS - Scientific Writing & Botanical Services",
+  "description": "Professional scientific writing, manuscript polishing, and authenticated plant services for researchers and industries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

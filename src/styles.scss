@@ -1,0 +1,69 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --primary: #003B2F;
+  --secondary: #D1FF19;
+  --background: #F8FAF8;
+  --surface: #FFFFFF;
+  --text-primary: #1C1F1D;
+  --text-secondary: #5F6762;
+  --border: #DCE7DD;
+
+  /* Subtle background colors for row differentiation */
+  --bg-row-subtle: #F2F5F2;
+  --bg-row-light: #E9EFEA;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Aptos Display', 'Aptos', 'Manrope', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, #0d5c4b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium scientific green image overlay */
+.scientific-image-overlay {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--primary);
+    opacity: 0.25;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 59, 47, 0.45) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 11;
+  }
+}
+

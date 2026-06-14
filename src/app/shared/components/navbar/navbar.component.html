@@ -1,0 +1,90 @@
+<header class="bg-surface border-b border-border sticky top-0 z-50 w-full transition-all duration-200">
+  <div class="max-w-[1280px] mx-auto px-lg flex items-center justify-between h-20">
+    <!-- Logo -->
+    <div class="flex items-center gap-sm">
+      <span class="font-display text-headline-h1 font-extrabold text-primary cursor-pointer tracking-tight" routerLink="/">BIOSYS</span>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-xl">
+      <a class="text-body-md font-semibold text-text-secondary hover:text-primary transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" 
+         routerLink="/" routerLinkActive="text-primary after:scale-x-100" [routerLinkActiveOptions]="{exact: true}">
+        Home
+      </a>
+      <a class="text-body-md font-semibold text-text-secondary hover:text-primary transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" 
+         routerLink="/scientific-writing" routerLinkActive="text-primary after:scale-x-100">
+        Writing Services
+      </a>
+      <a class="text-body-md font-semibold text-text-secondary hover:text-primary transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" 
+         routerLink="/plant-services" routerLinkActive="text-primary after:scale-x-100">
+        Plant Services
+      </a>
+      <a class="text-body-md font-semibold text-text-secondary hover:text-primary transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" 
+         routerLink="/miscellaneous" routerLinkActive="text-primary after:scale-x-100">
+        Miscellaneous
+      </a>
+      <a class="text-body-md font-semibold text-text-secondary hover:text-primary transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" 
+         routerLink="/about" routerLinkActive="text-primary after:scale-x-100">
+        About Us
+      </a>
+      <a class="text-body-md font-semibold text-text-secondary hover:text-primary transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left" 
+         routerLink="/contact" routerLinkActive="text-primary after:scale-x-100">
+        Contact Us
+      </a>
+    </nav>
+
+    <!-- Desktop CTA Button -->
+    <div class="hidden lg:flex items-center gap-md">
+      <button class="bg-secondary text-primary hover:brightness-105 px-lg py-sm rounded-lg font-semibold transition-all active:scale-95 cursor-pointer" routerLink="/contact">
+        Get a Quote
+      </button>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="lg:hidden p-sm text-primary" (click)="toggleSidebar()" aria-label="Toggle Menu">
+      <span class="material-symbols-outlined text-3xl">{{ isSidebarCollapsed() ? 'menu' : 'close' }}</span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="lg:hidden absolute top-20 left-0 w-full bg-surface border-b border-border shadow-lg transition-all duration-300 overflow-hidden z-[40]"
+       [style.max-height]="isSidebarCollapsed() ? '0px' : '450px'">
+    <nav class="flex flex-col p-lg space-y-sm">
+      <a class="flex items-center gap-md p-md hover:bg-background rounded-lg text-text-primary transition-colors" 
+         routerLink="/" routerLinkActive="bg-background text-primary font-semibold" [routerLinkActiveOptions]="{exact: true}" (click)="closeSidebar()">
+        <span class="material-symbols-outlined">home</span>
+        Home
+      </a>
+      <a class="flex items-center gap-md p-md hover:bg-background rounded-lg text-text-primary transition-colors" 
+         routerLink="/scientific-writing" routerLinkActive="bg-background text-primary font-semibold" (click)="closeSidebar()">
+        <span class="material-symbols-outlined">edit_note</span>
+        Writing Services
+      </a>
+      <a class="flex items-center gap-md p-md hover:bg-background rounded-lg text-text-primary transition-colors" 
+         routerLink="/plant-services" routerLinkActive="bg-background text-primary font-semibold" (click)="closeSidebar()">
+        <span class="material-symbols-outlined">potted_plant</span>
+        Plant Services
+      </a>
+      <a class="flex items-center gap-md p-md hover:bg-background rounded-lg text-text-primary transition-colors" 
+         routerLink="/miscellaneous" routerLinkActive="bg-background text-primary font-semibold" (click)="closeSidebar()">
+        <span class="material-symbols-outlined">grid_view</span>
+        Miscellaneous
+      </a>
+      <a class="flex items-center gap-md p-md hover:bg-background rounded-lg text-text-primary transition-colors" 
+         routerLink="/about" routerLinkActive="bg-background text-primary font-semibold" (click)="closeSidebar()">
+        <span class="material-symbols-outlined">info</span>
+        About Us
+      </a>
+      <a class="flex items-center gap-md p-md hover:bg-background rounded-lg text-text-primary transition-colors" 
+         routerLink="/contact" routerLinkActive="bg-background text-primary font-semibold" (click)="closeSidebar()">
+        <span class="material-symbols-outlined">mail</span>
+        Contact Us
+      </a>
+      <div class="pt-md border-t border-border mt-sm">
+        <button class="w-full bg-secondary text-primary px-lg py-md rounded-lg font-bold hover:brightness-105 transition-all cursor-pointer" routerLink="/contact" (click)="closeSidebar()">
+          Get a Quote
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
