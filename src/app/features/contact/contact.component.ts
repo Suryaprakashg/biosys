@@ -55,7 +55,7 @@ export class ContactComponent implements OnInit {
   formData.append('institution', this.formData.institution);
   formData.append('interest', this.formData.interest);
   formData.append('message', this.formData.message);
-  this.http.post('https://formsubmit.co/ajax/suryaprakashg1000@gmail.com',formData).subscribe({
+  this.http.post('https://formsubmit.co/ajax/biosysr@gmail.com',formData).subscribe({
 
     next :()=>{
       this.showSuccess.set(true);
